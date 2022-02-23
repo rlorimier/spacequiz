@@ -1,0 +1,19 @@
+/* fonts */
+@font-face {
+    font-family: OuterSpace;
+    src: url(fonts/outer_space.ttf);
+}
+
+@font-face {
+    font-family: SpaceShop;
+    src: url(fonts/space-shop.ttf);
+}
+
+/* general style */
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: OuterSpace, sans-serif;
+    font-size: 1.1em;
+}
