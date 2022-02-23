@@ -5,6 +5,11 @@
 }
 
 @font-face {
+    font-family: SpaceAge;
+    src: url(fonts/space-age.ttf);
+}
+
+@font-face {
     font-family: SpaceShop;
     src: url(fonts/space-shop.ttf);
 }
@@ -16,4 +21,56 @@
     border: none;
     font-family: OuterSpace, sans-serif;
     font-size: 1.1em;
+}
+
+/* header */
+body {
+    background: url(../media/images/space_stars.jpg) repeat center center;
+    background-color: black;
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: SpaceAge, sans-serif;
+    font-size: 5em;
+    padding: 30px;
+}
+
+.spaceshop_h1 {
+    font-family: SpaceShop, sans-serif;
+    font-size: 0.4em;
+}
+
+/* quiz box */
+#spacequiz {
+    width: 950px;
+    height: 400px;
+	padding: 25px ;
+	margin: auto;
+    margin-bottom: 100px;
+	background-color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    background-color: black;
+    color: whitesmoke;
+    padding: 20px;
+    margin-top: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.spaceshop_footer {
+    font-family: SpaceShop, sans-serif;
+    font-size: 1em;
 }
