@@ -90,3 +90,19 @@ let quizQuestions = [
         correctAnswer: "c"
     },
 ]
+
+let quizBox = document.getElementById("spacequiz-questions");
+let resultBox = document.getElementById("spacequiz-results");
+let submitBtn = document.getElementById("submit-btn");
+
+// to build the quiz
+function showQuiz() {}
+
+//to show the results
+function resultQuiz() {}
+
+//to show the quiz
+showQuiz()
+
+// to show the results when submit button is clicked
+submitBtn.addEventListener("click", resultQuiz);
