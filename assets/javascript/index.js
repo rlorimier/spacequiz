@@ -91,45 +91,63 @@ let quizQuestions = [
     },
 ]
 
-let quizBox = document.getElementById("spacequiz");
+let quizContainer = document.getElementById("spacequiz");
 let resultBox = document.getElementById("results");
 let submitBtn = document.getElementById("submit-btn");
 
-// to build the quiz
-function showQuestions(questions, quizContainer) {
-    //to store the output
-    let output = [];
-    let answers ;
+generateQuiz (quizQuestions, quizContainer, resultBox, submitBtn)
 
-    //for each question
-    for (let i = 0; i < quizQuestions.length; i++) {
-        answers = []; //reset list of answers
+function generateQuiz (questions, quizContainer, resultBox, submitBtn) {
 
-        //for each answer
-        for (letter in quizQuestions[i].answers) {
-            //add html radio button
-            answers.push (
-                "<label>"
-                    + '<input type="radio" name="question">'
-                    + questions[i].answers[letter]
-                + "</label>"
+    // to build the quiz
+    function showQuestions(questions, quizContainer) {
+        //to store the output
+        let output = [];
+        let answers ;
+
+        //for each question
+        for (let i = 0; i < quizQuestions.length; i++) {
+            answers = []; //reset list of answers
+
+            //for each answer
+            for (letter in quizQuestions[i].answers) {
+                //add html radio button
+                answers.push (
+                    "<label>"
+                        + '<input type="radio" name="question">'
+                        + questions[i].answers[letter]
+                    + "</label>"
+                );
+            }
+            //add question and answers to output
+            output.push (
+                '<div class="question">' + questions[i].question + '</div>'
+                + '<div class="answers">' + answers.join("") + '</div>'
             );
         }
-        //add question and answers to output
-        output.push (
-            '<div class="question">' + questions[i].question + '</div>'
-            + '<div class="answers">' + answers.join("") + '</div>'
-        );
+        //show on the page
+        quizContainer.innerHTML = output.join("");
     }
-    //show on the page
-    quizContainer.innerHTML = output.join("");
+
+    //to show the results
+    function resultQuiz() {
+        let answerContainer = quizContainer.querySelectorAll('.answers');
+        let userAnswer = "";
+        let numCorrect = 0;
+
+        for (let i = 0; i < questions.length; i++) {
+            userAnswer = (answerContainer[i].querySelector('input[name=question '+i+']:checked')||{}).value;
+            if (userAnswer === questions[i].correctAnswer) {
+                numCorrect++;
+
+            }
+        }
+        resultBox.innerHTML = numCorrect;
+    }
+
+    //to show the quiz
+    showQuestions(questions, quizContainer);
+
+    // to show the results when submit button is clicked
+    submitBtn.addEventListener("click", resultQuiz);
 }
-
-//to show the results
-function resultQuiz() {}
-
-//to show the quiz
-showQuiz()
-
-// to show the results when submit button is clicked
-submitBtn.addEventListener("click", resultQuiz);
