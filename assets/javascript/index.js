@@ -91,12 +91,39 @@ let quizQuestions = [
     },
 ]
 
-let quizBox = document.getElementById("spacequiz-questions");
-let resultBox = document.getElementById("spacequiz-results");
+let quizBox = document.getElementById("spacequiz");
+let resultBox = document.getElementById("results");
 let submitBtn = document.getElementById("submit-btn");
 
 // to build the quiz
-function showQuiz() {}
+function showQuestions(questions, quizContainer) {
+    //to store the output
+    let output = [];
+    let answers ;
+
+    //for each question
+    for (let i = 0; i < quizQuestions.length; i++) {
+        answers = []; //reset list of answers
+
+        //for each answer
+        for (letter in quizQuestions[i].answers) {
+            //add html radio button
+            answers.push (
+                "<label>"
+                    + '<input type="radio" name="question">'
+                    + questions[i].answers[letter]
+                + "</label>"
+            );
+        }
+        //add question and answers to output
+        output.push (
+            '<div class="question">' + questions[i].question + '</div>'
+            + '<div class="answers">' + answers.join("") + '</div>'
+        );
+    }
+    //show on the page
+    quizContainer.innerHTML = output.join("");
+}
 
 //to show the results
 function resultQuiz() {}
