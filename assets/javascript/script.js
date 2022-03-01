@@ -95,11 +95,11 @@ let quizQuestions = [
 let startBtn = document.getElementById("start-btn");
 let questionContainer = document.getElementById("questions");
 
-startBtn = addEventListener("click", startQuiz)
+startBtn.addEventListener("click", startQuiz)
 
 function startQuiz() {
     console.log("hello")
-    startBtn.classList.add('hide') // not working
+    startBtn.classList.add('hide')
     questionContainer.classList.remove("hide")
 }
 
