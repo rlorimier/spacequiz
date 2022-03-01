@@ -91,3 +91,22 @@ let quizQuestions = [
     },
 ]
 
+
+let startBtn = document.getElementById("start-btn");
+let questionContainer = document.getElementById("questions");
+
+startBtn = addEventListener("click", startQuiz)
+
+function startQuiz() {
+    console.log("hello")
+    startBtn.classList.add('hide') // not working
+    questionContainer.classList.remove("hide")
+}
+
+function nextQuestion() {
+
+}
+
+function selectAnswer() {
+
+}
