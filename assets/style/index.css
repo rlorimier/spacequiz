@@ -44,16 +44,65 @@ h1 {
     font-size: 0.4em;
 }
 
-/* quiz box */
+/* styling the quiz */
+
+/* box container */
 #spacequiz {
     width: 950px;
-    height: auto;
+    height: 400px;
 	padding: 25px ;
 	margin: auto;
     margin-bottom: 100px;
 	background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
     text-align: left;
 }
+
+.questions {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 10px;
+    margin: 10px auto;
+}
+
+.btn {
+    background-color: darkslategray;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: white;
+    color: darkslategrey;
+}
+
+.small-btn {
+    font-size: 2rem;
+}
+
+.large-btn, .medium-btn {
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 20px 30px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.hide {
+    display: none;
+}
+
+
+
+
+
 
 /* footer */
 footer {
