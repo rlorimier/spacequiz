@@ -9,84 +9,75 @@ let quizQuestions = [
     },
     {
         question: "What NASA stands for:",
-        answers: {
-            a: "National Aliance and Space Aeronautics",
-            b: "Nacional Administration and Space Aliance",
-            c: "National Aeronautics and Space Administration"
-        },
-        correctAnswer: "c"
+        answers: [
+            {text: "National Aliance and Space Aeronautics", correct: false},
+            {text: "Nacional Administration and Space Aliance", correct: false},
+            {text: "National Aeronautics and Space Administration", correct: true}
+        ],
     },
     {
         question: "What is the deadliest planet in the Solar System?",
-        answers: {
-            a: "Venus",
-            b: "Saturn",
-            c: "Mars"
-        },
-        correctAnswer: "a"
+        answers: [
+            {text: "Venus", correct: true},
+            {text: "Saturn", correct: false},
+            {text: "Mars", correct: false}
+        ],
     },
     {
         question: "The Earth's average distance to the Sun is:",
-        answers: {
-            a: "109 million km",
-            b: "149 million km",
-            c: "199 million km"
-        },
-        correctAnswer: "b"
+        answers: [
+            {text: "109 million km", correct: false},
+            {text: "149 million km", correct: true},
+            {text: "199 million km", correct: false}
+        ],
     },
     {
         question: "The most common type of black holes, they can be up to 20 times more massive than the Sun:",
-        answers: {
-            a: "Primordial Black Holes",
-            b: "Stellar Black Holes",
-            c: "Supermassive Black Holes"
-        },
-        correctAnswer: "b"
+        answers: [
+            {text: "Primordial Black Holes", correct: false},
+            {text: "Stellar Black Holes", correct: true},
+            {text: "Supermassive Black Holes", correct: false}
+        ],
     },
     {
         question: "What is the Sun mainly made of?",
-        answers: {
-            a: "Rock",
-            b: "Lava",
-            c: "Gas"
-        },
-        correctAnswer: "c"
+        answers: [
+            {text: "Rock", correct: false},
+            {text: "Lava", correct: false},
+            {text: "Gas", correct: true}
+        ],
     },
     {
         question: "How many moons does Mars have?",
-        answers: {
-            a: "6",
-            b: "4",
-            c: "2"
-        },
-        correctAnswer: "c"
+        answers: [
+            {text: "6", correct: false},
+            {text: "4", correct: false},
+            {text: "2", correct: true}
+        ],
     },
     {
         question: "Icy bodies of frozen gases, rocks and dust left over from the formation of the solar system are:",
-        answers: {
-            a: "Comets",
-            b: "Stars",
-            c: "Asteroids"
-        },
-        correctAnswer: "a"
+        answers: [
+            {text: "Comets", correct: true},
+            {text: "Stars", correct: false},
+            {text: "Asteroids", correct: false}
+        ],
     },
     {
         question: "When did Apollo-11 successfully land on the Moon?",
-        answers: {
-            a: "1968",
-            b: "1969",
-            c: "1970"
-        },
-        correctAnswer: "b"
+        answers: [
+            {text: "1968", correct: false},
+            {text: "1969", correct: true},
+            {text: "1970", correct: false},
+        ],
     },
     {
         question: "Where is located the Asteroid Belt?",
-        answers: {
-            a: "Between Mars and Jupiter",
-            b: "Between Mars and Earth",
-            c: "Between Earth and Jupiter"
-        },
-        correctAnswer: "c"
+        answers: [
+            {text: "Between Mars and Jupiter", correct: false},
+            {text: "Between Mars and Earth", correct: false},
+            {text: "Between Earth and Jupiter", correct: true}
+        ],
     },
 ]
 
@@ -118,7 +109,7 @@ function showQuestion(question) {
     question.answers.forEach(answer => {
         let button = document.createElement("label")
         button.innerText = answer.text
-    }
+    })
 }
 
 function selectAnswer() {
