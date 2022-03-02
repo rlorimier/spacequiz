@@ -83,9 +83,9 @@ let quizQuestions = [
 
 
 let startBtn = document.getElementById("start-btn");
-let questionContainer = document.getElementById("questions");
-
-
+let questionContainer = document.getElementById("spacequiz");
+let questionElement = document.getElementById("questions")
+let answerElement = document.getElementById("answer-box")
 
 let shuffleQuestions, currentQuestion
 
@@ -109,6 +109,10 @@ function showQuestion(question) {
     question.answers.forEach(answer => {
         let button = document.createElement("label")
         button.innerText = answer.text
+        button.classList.add("answerbox")
+
+        button.addEventListener("click", selectAnswer)
+        answerElement.appendChild(button)
     })
 }
 
