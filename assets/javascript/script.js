@@ -105,14 +105,14 @@ function nextQuestion() {
 }
 
 function showQuestion(question) {
-    questionContainer.innerText = question.question
+    questionElement.innerText = question.question
     question.answers.forEach(answer => {
         let button = document.createElement("label")
         button.innerText = answer.text
         button.classList.add("answerbox")
-
-        button.addEventListener("click", selectAnswer)
+        answerElement.classList.remove("hide")
         answerElement.appendChild(button)
+        button.addEventListener("click", selectAnswer)
     })
 }
 

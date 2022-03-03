@@ -9,3 +9,10 @@ You can check out the website by clicking
 ## Features
 ### Existing features
 - Created in HTML5, CSS and JavaScript using Visual Studio Code.
+
+### Bugs
+- Line 92 > using the wrong sign to add and event listener (= instead of .)
+Solved using help from Slack Community
+- Line 108 > using the wrong variable (questionContainer instead of questionElement)
+Solved with Mentor guide
+- 
