@@ -96,7 +96,7 @@ function startQuiz() {
     startBtn.classList.add("hide")
     shuffleQuestions = quizQuestions.sort(() => Math.random() -.5)
     currentQuestion = 0
-    questionContainer.classList.remove("hide")
+    questionElement.classList.remove("hide")
     nextQuestion()
 }
 

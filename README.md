@@ -15,4 +15,5 @@ You can check out the website by clicking
 Solved using help from Slack Community
 - Line 108 > using the wrong variable (questionContainer instead of questionElement)
 Solved with Mentor guide
-- 
+- Line 99 > using the wrong variable (questionContainer instead of questionElement)
+Solved by testing
