@@ -59,10 +59,9 @@ h1 {
 }
 
 .questions {
-    display: grid;
-    grid-template-columns: repeat(1, auto);
-    gap: 10px;
-    margin: 10px auto;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 30px;
 }
 
 .btn {
@@ -92,15 +91,28 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .hide {
     display: none;
 }
 
+.answerbox {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: grid;
+    padding: 6px;
+    margin: 6px auto;
+}
 
+.answerbox:hover {
+    background-color: rgb(79, 79, 107);
+    color: white;
+}
 
+.correct {
+    background-color: green;
+}
 
 
 

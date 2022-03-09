@@ -81,26 +81,34 @@ let quizQuestions = [
     },
 ]
 
-
+//creating variables//
 let startBtn = document.getElementById("start-btn");
+let nextBtn = document.getElementById("next-btn")
 let questionContainer = document.getElementById("spacequiz");
 let questionElement = document.getElementById("questions")
 let answerElement = document.getElementById("answer-box")
 
 let shuffleQuestions, currentQuestion
 
+//add event listeners to start and next buttons//
 startBtn.addEventListener("click", startQuiz)
+nextBtn.addEventListener("click", () => {
+    currentQuestion++
+    nextQuestion()
+})
 
+//to start the game//
 function startQuiz() {
     console.log("hello")
-    startBtn.classList.add("hide")
-    shuffleQuestions = quizQuestions.sort(() => Math.random() -.5)
+    startBtn.classList.add("hide") //start button to hide when clicked//
+    shuffleQuestions = quizQuestions.sort(() => Math.random() -.5) //to shuffle the questions each time the quiz is started//
     currentQuestion = 0
-    questionElement.classList.remove("hide")
+    questionElement.classList.remove("hide") //to show the first question// 
     nextQuestion()
 }
 
 function nextQuestion() {
+    resetQuiz()
     showQuestion(shuffleQuestions[currentQuestion])
 }
 
@@ -110,12 +118,44 @@ function showQuestion(question) {
         let button = document.createElement("label")
         button.innerText = answer.text
         button.classList.add("answerbox")
+        if (answer.correct){
+            button.dataset.correct = answer.correct
+        }
         answerElement.classList.remove("hide")
-        answerElement.appendChild(button)
         button.addEventListener("click", selectAnswer)
+        answerElement.appendChild(button)
     })
 }
 
-function selectAnswer() {
+function resetQuiz() {
+    //nextBtn.classList.add("hide")
+    while (answerElement.firstChild){
+        answerElement.removeChild(answerElement.firstChild)
+    }
+}
 
+function selectAnswer(i) {
+    let selectedAnswer = i.target
+    let correct = selectedAnswer.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    if (shuffleQuestions.lenght > currentQuestion +1) {
+        nextBtn.classList.remove("hide")
+    } else {
+        startBtn.innerText = "Restart Quiz"
+        startBtn.classList.remove("hide")
+    }
+}
+
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add("correct")
+    } 
+}
+
+function clearStatusClass(element) {
+    element.classList.remove("correct")
 }

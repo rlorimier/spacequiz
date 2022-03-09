@@ -100,7 +100,7 @@ generateQuiz (quizQuestions, quizContainer, resultBox, submitBtn)
 function generateQuiz (questions, quizContainer, resultBox, submitBtn) {
 
     // to build the quiz
-    function showQuestions(questions, quizContainer) {
+    function showQuestions(quest    ions, quizContainer) {
         //to store the output
         let output = [];
         let answers ;
